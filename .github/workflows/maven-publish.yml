@@ -23,15 +23,15 @@ jobs:
           distribution: 'temurin'
           java-version: 21
 
-      - name: Matar instancias de ChromeDriver
-        run: |
+      #- name: Matar instancias de ChromeDriver
+        #run: |
           # Verificar si hay procesos de ChromeDriver en ejecución
-          if pgrep chromedriver > /dev/null; then
+         # if pgrep chromedriver > /dev/null; then
             # Matar los procesos de ChromeDriver
-            pkill chromedriver
-          else
-            echo "No se encontraron procesos de ChromeDriver en ejecución"
-          fi
+           # pkill chromedriver
+          #else
+            #echo "No se encontraron procesos de ChromeDriver en ejecución"
+         # fi
 
       - name: Maven Verify
         run: mvn -B clean test
