@@ -3,7 +3,6 @@ package com.example.listeners;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-import com.example.base.BaseTest;
 import com.example.utils.Log;
 
 public class MyRetryAnalyzer implements IRetryAnalyzer {
@@ -15,8 +14,6 @@ public class MyRetryAnalyzer implements IRetryAnalyzer {
       if (counter < retryLimit) {
          counter++;
          Log.warn("El test fallo: " + result.getMethod().getMethodName() + " Reintento numero: " + counter + " de 1");
-         Object testClass = result.getInstance();
-         ((BaseTest) testClass).getDriver().quit();
          return true;
       }
       return false;
