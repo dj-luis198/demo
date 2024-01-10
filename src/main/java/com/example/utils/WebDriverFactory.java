@@ -27,13 +27,13 @@ public class WebDriverFactory {
 				pref.put("download.prompt_for_download", false);
 				pref.put("download.default_directory", file.getAbsolutePath());
 				chromeOptions.addArguments("--remote-allow-origins=*");
-				//chromeOptions.addArguments("--headless=new");
+				chromeOptions.addArguments("--headless=new");
 				chromeOptions.addArguments("--window-size=1920,1080");
 				chromeOptions.addArguments("--disable-extensions");
 				chromeOptions.addArguments("--disable-dev-shm-usage");
 				chromeOptions.addArguments("--disable-gpu");
 				chromeOptions.addArguments("--no-sandbox");
-				//chromeOptions.addArguments("--start-fullscreen");
+				chromeOptions.addArguments("--start-fullscreen");
 				chromeOptions.addArguments("--no-proxy-server");
 				chromeOptions.addArguments("--ignore-certificate-errors");
 				chromeOptions.setExperimentalOption("prefs", pref);
