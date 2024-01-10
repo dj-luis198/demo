@@ -27,10 +27,8 @@ jobs:
                 chmod +x ./scripts/InstallChrome.sh
                             ./scripts/InstallChrome.sh 
 
-      - name:  kill task 
-        run:   |
-                chmod +x ./scripts/kill_chromedriver.bat
-                            ./scripts/kill_chromedriver.bat
+      - name: kill tasks
+        run: ./scripts/kill_chromedriver.bat
   
       - name: Maven Verify
         run: mvn -B clean test
