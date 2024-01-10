@@ -27,9 +27,23 @@ jobs:
                 chmod +x ./scripts/InstallChrome.sh
                             ./scripts/InstallChrome.sh 
 
-      - name: kill tasks
-        run: ./scripts/kill_chromedriver.bat
-  
+      - name: Verificar existencia del archivo .bat
+        run: |
+          # Verificar si el archivo .bat existe
+          if [ -f archivo.bat ]; then
+            echo "El archivo archivo.bat existe"
+            chmod +x ./scripts/kill_chromedriver.bat  # Otorgar permisos de ejecución
+          else
+            echo "El archivo archivo.bat no existe"
+            exit 1
+          fi
+
+      - name: Ejecutar archivo .bat
+        run: |
+          ./scripts/kill_chromedriver.bat
+
+
+      
       - name: Maven Verify
         run: mvn -B clean test
 
