@@ -29,8 +29,13 @@ jobs:
 
       - name: Matar instancias de ChromeDriver
         run: |
-          # Matar los procesos de ChromeDriver
-          pkill chromedriver
+          # Verificar si hay procesos de ChromeDriver en ejecución
+          if pgrep chromedriver > /dev/null; then
+            # Matar los procesos de ChromeDriver
+            pkill chromedriver
+          else
+            echo "No se encontraron procesos de ChromeDriver en ejecución"
+          fi
 
       - name: Maven Verify
         run: mvn -B clean test
