@@ -79,7 +79,7 @@ public class TextBoxPage extends Actions {
 
     public String verifyEmailMessage(String email) {
         String text1= "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \""+email+"\" no incluye el signo \"@\".";
-        String text4= "Please include an '@' in the email address. 'farias223.com' is missing an '@'.";
+        String text4= "Please include an '@' in the email address. '"+email+"' is missing an '@'.";
         String text2= "Ingrese una dirección de correo electrónico.";
         String text3= getAttributeValidationMessage(emailInput);
         if (text3.equals(text1)||text3.equals(text4)) {
