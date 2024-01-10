@@ -77,13 +77,19 @@ public class TextBoxPage extends Actions {
         return getText(permanentAddressText);
     }
 
-    public Boolean verifyEmailMessage(String email) {
-        if (getAttributeValidationMessage(emailInput).equals(
-                "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \""+email+"\" no incluye el signo \"@\".")
-                || getAttributeValidationMessage(emailInput).equals("Ingrese una dirección de correo electrónico.")) {
-            return true;
+    public String verifyEmailMessage(String email) {
+        String text1= "Incluye un signo \"@\" en la dirección de correo electrónico. La dirección \""+email+"\" no incluye el signo \"@\".";
+        String text2= "Ingrese una dirección de correo electrónico.";
+        String text3= getAttributeValidationMessage(emailInput);
+        if (getAttributeValidationMessage(emailInput).equals(text1)) {
+            return "true";
+        }else {
+            if(getAttributeValidationMessage(emailInput).equals(text2)) {
+                return "true";
+            }else{
+                return text3;
+            }
         }
-        return false;
     }
 
     public Boolean verifyBorderColorEmailInput() {

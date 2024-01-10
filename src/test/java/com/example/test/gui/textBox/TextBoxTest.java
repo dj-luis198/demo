@@ -38,7 +38,8 @@ public class TextBoxTest extends BaseTest {
         textBoxPage.enterCurrentAddress(currentAddress);
         textBoxPage.enterPermanentAddress(permanentAddress);
         textBoxPage.clickSubmitButton();
-        Assert.assertTrue(textBoxPage.verifyEmailMessage(email),"El mensaje de error no es el que se esperaba");
+        String textRes= textBoxPage.verifyEmailMessage(email);
+        Assert.assertEquals(textRes,"true","El mensaje de error no es el que se esperaba: "+textRes);
         Assert.assertTrue(textBoxPage.verifyBorderColorEmailInput(),"El color del borde del input email no es el que se esperaba");
     }
 }
