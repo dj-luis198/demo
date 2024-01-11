@@ -49,11 +49,15 @@ public class Actions {
     protected void confirmAlert() {
         try {
             wait.until(ExpectedConditions.alertIsPresent()); // Esperar a que aparezca una alerta
+            } catch (TimeoutException e) {
+            throw new Error("No se encontró el alerta \n"+ e.getStackTrace());
+        }
+        try {
             Alert alert = driver.switchTo().alert();
             alert.accept();
             driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
-        } catch (TimeoutException e) {
-            throw new Error("No se encontró el alerta \n"+ e.getStackTrace());
+        } catch (Exception e) {
+            throw new Error("No se pudo aceptar la alerta \n"+ e.getStackTrace());
         }
     }
 
