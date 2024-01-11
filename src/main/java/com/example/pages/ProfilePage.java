@@ -72,7 +72,6 @@ public class ProfilePage extends Actions {
     }
 
     public boolean verifyDeleteAllBooks(String books) {
-        long startTime = System.currentTimeMillis();
         List<String> booksList = new ArrayList<>(Arrays.asList(books.split(",,")));
         int count = 0;
         for (String book : booksList) {
@@ -81,9 +80,6 @@ public class ProfilePage extends Actions {
                 count++;
             }
         }
-        long endTime = System.currentTimeMillis();
-        long duration = endTime - startTime;
-        System.out.println("El método tardó " + duration + " milisegundos en ejecutarse.");
         return count == booksList.size();
     }
 }

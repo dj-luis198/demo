@@ -32,6 +32,11 @@ public class BookStorePage extends Actions {
         for (String book : booksList) {
             clickLinkText(book);
             this.clickAddToYouCollection();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             confirmAlert();
             this.clickBackToBookStore();
         }
