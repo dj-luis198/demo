@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,37 +17,43 @@ public class Actions {
 
     public Actions(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     protected WebElement waitToBeClickableLinkText(String linkText) {
-        return wait.until(ExpectedConditions.elementToBeClickable(By.linkText(linkText)));
+        try {
+            return wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText)));
+        } catch (TimeoutException e) {
+            throw new Error("El elemento no se volvió clickable dentro del tiempo de espera." + e);
+        }
     }
 
     protected WebElement waitForVisibility(WebElement element) {
-        return wait.until(ExpectedConditions.visibilityOf(element));
+        try {
+            return wait.until(ExpectedConditions.visibilityOf(element));
+        } catch (TimeoutException e) {
+            throw new Error("El elemento no se volvió visible dentro del tiempo de espera." + e);
+        }
+
     }
 
     protected WebElement waitToBeClickable(WebElement element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
+        try {
+            return wait.until(ExpectedConditions.elementToBeClickable(element));
+        } catch (TimeoutException e) {
+            throw new Error("El elemento no se volvió clickable dentro del tiempo de espera." + e);
+        }
     }
 
     protected void confirmAlert() {
-       try {
-        wait.until(driver -> {
-            try {
-                driver.switchTo().alert();
-                return true; // Se encontró la alerta
-            } catch (NoAlertPresentException e) {
-                return false; // No se encontró la alerta
-            }
-        });
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
-    } catch (TimeoutException e) {
-        throw new Error("No se encontró la alerta");
-    }
+        try {
+            wait.until(ExpectedConditions.alertIsPresent()); // Esperar a que aparezca una alerta
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+            driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
+        } catch (TimeoutException e) {
+            throw new Error("No se encontró el alerta", e);
+        }
     }
 
     public void clickLinkText(String linkText) {
