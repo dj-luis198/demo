@@ -32,7 +32,16 @@ public class BookStorePage extends Actions {
         for (String book : booksList) {
             clickLinkText(book);
                 this.clickAddToYouCollection();
-                confirmAlert();
+                try {
+                    confirmAlert();
+                } catch (Exception e) {
+                    try {
+                        this.clickAddToYouCollection();
+                        confirmAlert();
+                    } catch (Exception ex) {
+                        throw new Error("No se encontró el alerta \n"+ ex.getStackTrace());
+                    }
+                }
                 this.clickBackToBookStore();
         }
     }
