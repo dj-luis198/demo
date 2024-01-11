@@ -2,13 +2,13 @@ package com.example.utils;
 
 import java.time.Duration;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,6 +19,15 @@ public class Actions {
     public Actions(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    protected Boolean waitTVisivilityElementBoolean(WebElement element) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
     protected WebElement waitToBeClickableLinkText(String linkText) {
@@ -49,15 +58,24 @@ public class Actions {
     protected void confirmAlert() {
         try {
             wait.until(ExpectedConditions.alertIsPresent()); // Esperar a que aparezca una alerta
-            } catch (TimeoutException e) {
-            throw new Error("No se encontró el alerta \n"+ e.getStackTrace());
+        } catch (TimeoutException e) {
+            throw new Error("No se encontró el alerta \n" + e.getStackTrace());
         }
         try {
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
+            wait.until(new ExpectedCondition<Boolean>() {
+                public Boolean apply(WebDriver d) {
+                    try {
+                        driver.switchTo().alert().accept();
+                        return true;
+                    } catch (Exception e) {
+                        return false;
+                    }
+                }
+            });
+            //driver.switchTo().alert().accept(); // Aceptar la alerta
             driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
         } catch (Exception e) {
-            throw new Error("No se pudo aceptar el alerta \n"+ e.getStackTrace());
+            throw new Error("No se pudo aceptar el alerta \n" + e.getStackTrace());
         }
     }
 
@@ -80,7 +98,7 @@ public class Actions {
 
     protected void clickJS(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click();", element);
+        jse.executeScript("arguments[0].click();", waitToBeClickable(element));
     }
 
     protected void type(WebElement element, String text) {
@@ -97,5 +115,15 @@ public class Actions {
 
     protected String getCssValueBorder(WebElement element) {
         return waitForVisibility(element).getCssValue("border");
+    }
+
+    protected void cSSDisplayNone(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].style.display = 'none';", element);
+    }
+
+    protected boolean serchElement(WebElement element) {
+        return waitTVisivilityElementBoolean(element);
+
     }
 }

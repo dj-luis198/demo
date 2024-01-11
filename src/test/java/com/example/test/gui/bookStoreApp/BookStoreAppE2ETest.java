@@ -37,7 +37,7 @@ public class BookStoreAppE2ETest extends BaseTest {
         Assert.assertEquals(profilePage.getUserName(), username);
         BookStorePage bookStorePage = profilePage.clickGoToStoreButton();
         bookStorePage.selectBooks(books);
-        bookStorePage.clickProfileOption();
+        profilePage = bookStorePage.clickProfileOption();
         profilePage.clickDeleteAllBooksButton();
         profilePage.clickLogOutButton();
     }
