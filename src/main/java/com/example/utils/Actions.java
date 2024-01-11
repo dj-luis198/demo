@@ -8,7 +8,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,12 +20,21 @@ public class Actions {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    protected Boolean waitTVisivilityElementBoolean(WebElement element) {
+    protected boolean waitTVisivilityElementBoolean(String Locator) {
         try {
-            wait.until(ExpectedConditions.visibilityOf(element));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Locator)));
             return true;
         } catch (TimeoutException e) {
             return false;
+        }
+    }
+
+    protected boolean waitTNotVisivilityElementBoolean(String Locator) {
+        try {
+            wait.until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(By.id(Locator))));
+            return false;
+        } catch (TimeoutException e) {
+            return true;
         }
     }
 
@@ -61,22 +69,7 @@ public class Actions {
         } catch (TimeoutException e) {
             throw new Error("No se encontró el alerta \n" + e.getStackTrace());
         }
-        try {
-            wait.until(new ExpectedCondition<Boolean>() {
-                public Boolean apply(WebDriver d) {
-                    try {
-                        driver.switchTo().alert().accept();
-                        return true;
-                    } catch (Exception e) {
-                        return false;
-                    }
-                }
-            });
-            //driver.switchTo().alert().accept(); // Aceptar la alerta
-            driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
-        } catch (Exception e) {
-            throw new Error("No se pudo aceptar el alerta \n" + e.getStackTrace());
-        }
+        driver.switchTo().alert().accept(); // Aceptar la alerta
     }
 
     public void clickLinkText(String linkText) {
@@ -117,13 +110,11 @@ public class Actions {
         return waitForVisibility(element).getCssValue("border");
     }
 
-    protected void cSSDisplayNone(WebElement element) {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].style.display = 'none';", element);
+    protected boolean serchLocatorId(String locator) {
+        return waitTVisivilityElementBoolean(locator);
     }
 
-    protected boolean serchElement(WebElement element) {
-        return waitTVisivilityElementBoolean(element);
-
+    protected boolean serchNotVisivilityLocatorId(String locator) {
+        return waitTNotVisivilityElementBoolean(locator);
     }
 }

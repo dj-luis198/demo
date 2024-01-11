@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.example.utils.Actions;
 
-public class LoginPage extends Actions{
+public class LoginPage extends Actions {
 
     @FindBy(id = "userName")
     private WebElement usernameInput;
@@ -17,6 +17,9 @@ public class LoginPage extends Actions{
 
     @FindBy(id = "login")
     private WebElement loginButton;
+
+    @FindBy(className = "main-header")
+    private WebElement mainHeader;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -40,5 +43,14 @@ public class LoginPage extends Actions{
         enterPassword(password);
         clickLoginButton();
         return new ProfilePage(driver);
+    }
+
+    public boolean getTextMainHeader() {
+        String text = getText(mainHeader);
+        if (text.equals("Login")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

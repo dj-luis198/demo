@@ -12,7 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.example.utils.Actions;
 
 public class BookStorePage extends Actions {
-    //AddsPage addsPage;
 
     @FindBy(css = ".text-right>#addNewRecordButton")
     private WebElement addToCollectionButton;
@@ -26,16 +25,12 @@ public class BookStorePage extends Actions {
     public BookStorePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        //addsPage = new AddsPage(driver);
-        //addsPage.deleteAdds();
     }
 
     public void selectBooks(String books) {
         List<String> booksList = new ArrayList<String>(Arrays.asList(books.split(",,")));
         for (String book : booksList) {
-            //addsPage.deleteAdds();
             clickLinkText(book);
-            //addsPage.deleteAdds();
             this.clickAddToYouCollection();
             confirmAlert();
             this.clickBackToBookStore();
@@ -54,5 +49,4 @@ public class BookStorePage extends Actions {
         click(profileOption);
         return new ProfilePage(driver);
     }
-
 }

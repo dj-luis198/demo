@@ -93,7 +93,7 @@ public class TextBoxPage extends Actions {
         }
     }
 
-    public Boolean verifyBorderColorEmailInput() {
+    public boolean verifyBorderColorEmailInput() {
         if (getCssValueBorder(emailInput).equals("0.666667px solid rgb(255, 0, 0)")
                 || getCssValueBorder(emailInput).equals("1px solid rgb(255, 0, 0)")) {
             return true;

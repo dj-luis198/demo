@@ -31,14 +31,24 @@ public class BookStoreAppE2ETest extends BaseTest {
         this.books = books;
     }
 
-    @Test(timeOut = 40000)
+    @Test
     public void bookStoreE2E() {
         ProfilePage profilePage = loginPage.login(username, password);
         Assert.assertEquals(profilePage.getUserName(), username);
         BookStorePage bookStorePage = profilePage.clickGoToStoreButton();
+        System.out.println("ingreso seleccion libros");
         bookStorePage.selectBooks(books);
+        System.out.println("Se seleccionaron los libros");
         profilePage = bookStorePage.clickProfileOption();
+        System.out.println("verificando seleccion de libros");
+        Assert.assertTrue(profilePage.verifySelectedBooks(books),"No se seleccionaron todos los libros");
+        System.out.println("eliminando libros");
         profilePage.clickDeleteAllBooksButton();
-        profilePage.clickLogOutButton();
+        System.out.println("verificando eliminacion de libros");
+        Assert.assertTrue(profilePage.verifyDeleteAllBooks(books),"No fueron eliminados todos los libros");
+        System.out.println("saliendo de la app");
+        loginPage = profilePage.clickLogOutButton();
+        Assert.assertTrue(loginPage.getTextMainHeader(),"No nos encontramos en el login");
+
     }
 }
