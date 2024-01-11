@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,7 +25,7 @@ public class Actions {
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(linkText)));
         } catch (TimeoutException e) {
-            throw new Error("El elemento no se volvió clickable dentro del tiempo de espera." + e);
+            throw new Error("El elemento no se volvió clickable dentro del tiempo de espera.\n" + e.getStackTrace());
         }
     }
 
@@ -32,7 +33,7 @@ public class Actions {
         try {
             return wait.until(ExpectedConditions.visibilityOf(element));
         } catch (TimeoutException e) {
-            throw new Error("El elemento no se volvió visible dentro del tiempo de espera." + e);
+            throw new Error("El elemento no se volvió visible dentro del tiempo de espera.\n" + e.getStackTrace());
         }
 
     }
@@ -41,7 +42,7 @@ public class Actions {
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (TimeoutException e) {
-            throw new Error("El elemento no se volvió clickable dentro del tiempo de espera." + e);
+            throw new Error("El elemento no se volvió clickable dentro del tiempo de espera.\n" + e.getStackTrace());
         }
     }
 
@@ -52,7 +53,7 @@ public class Actions {
             alert.accept();
             driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
         } catch (TimeoutException e) {
-            throw new Error("No se encontró el alerta", e);
+            throw new Error("No se encontró el alerta \n"+ e.getStackTrace());
         }
     }
 
@@ -68,7 +69,7 @@ public class Actions {
             try {
                 clickJS(element);
             } catch (Exception ex) {
-                throw new Error("No se pudo hacer clic en el elemento: " + element + " : " + ex.getMessage());
+                throw new Error("No se pudo hacer clic en el elemento: " + element + " : \n" + ex.getStackTrace());
             }
         }
     }
