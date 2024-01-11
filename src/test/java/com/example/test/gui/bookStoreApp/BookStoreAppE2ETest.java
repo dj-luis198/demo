@@ -31,7 +31,7 @@ public class BookStoreAppE2ETest extends BaseTest {
         this.books = books;
     }
 
-    @Test(timeOut = 60000)
+    @Test(timeOut = 40000)
     public void bookStoreE2E() {
         ProfilePage profilePage = loginPage.login(username, password);
         Assert.assertEquals(profilePage.getUserName(), username);
