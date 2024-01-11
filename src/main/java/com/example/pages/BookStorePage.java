@@ -27,10 +27,11 @@ public class BookStorePage extends Actions {
         PageFactory.initElements(driver, this);
     }
 
-    public void selectBooks(String books) {
+    public void selectBooks(String books){
         List<String> booksList = new ArrayList<String>(Arrays.asList(books.split(",,")));
         for (String book : booksList) {
             clickLinkText(book);
+            waitTime(1);
             this.clickAddToYouCollection();
             confirmAlert();
             this.clickBackToBookStore();
@@ -48,5 +49,9 @@ public class BookStorePage extends Actions {
     public ProfilePage clickProfileOption() {
         click(profileOption);
         return new ProfilePage(driver);
+    }
+
+    public void getTitlePage(){
+        getTitle();
     }
 }

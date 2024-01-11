@@ -26,6 +26,7 @@ public class WebDriverFactory {
             Map<String, Object> pref = new HashMap<String, Object>();
 				pref.put("download.prompt_for_download", false);
 				pref.put("download.default_directory", file.getAbsolutePath());
+				chromeOptions.addArguments("--incognito");
 				chromeOptions.addArguments("--remote-allow-origins=*");
 				chromeOptions.addArguments("--headless=new");
 				chromeOptions.addArguments("--window-size=1920,1080");
@@ -51,6 +52,8 @@ public class WebDriverFactory {
 				profile.setPreference("browser.download.dir", file.getAbsolutePath());
 				profile.setPreference("browser.download.folderList", 2);
 				firefoxOptions.addArguments("--headless");
+				firefoxOptions.addArguments("-private");
+
 				firefoxOptions.setProfile(profile);
                 // Agrega aquí las opciones adicionales que desees
                 driver = new FirefoxDriver(firefoxOptions);
@@ -62,6 +65,7 @@ public class WebDriverFactory {
                 Map<String, Object> prefEdge = new HashMap<String, Object>();
 				prefEdge.put("download.prompt_for_download", false);
 				prefEdge.put("download.default_directory", file.getAbsolutePath());
+				edgeOptions.addArguments("--inprivate");
 				edgeOptions.addArguments("--remote-allow-origins=*");
 				edgeOptions.addArguments("--headless=new");
 				edgeOptions.addArguments("--window-size=1920,1080");

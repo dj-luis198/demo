@@ -65,13 +65,14 @@ public class Actions {
     }
 
     protected void confirmAlert() {
+        Alert alert;
         try {
             WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(3));
             ewait.until(ExpectedConditions.alertIsPresent());
-			Alert alert = driver.switchTo().alert();
+            alert = driver.switchTo().alert();
             alert.accept();
         } catch (TimeoutException e) {
-            throw new Error("No se encontró el alerta \n" + e.getStackTrace());
+            throw new Error("ocurrio un problema con el alerta \n" + e.getStackTrace());
         }
     }
 
@@ -119,5 +120,16 @@ public class Actions {
 
     protected boolean serchNotVisivilityLocatorId(String locator) {
         return waitTNotVisivilityElementBoolean(locator);
+    }
+
+    protected void waitTime(int time) {
+        try {
+        WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        ewait.until(ExpectedConditions.titleIs("titulo fake"));
+        } catch (Exception e) {  
+        }
+    }
+    protected String getTitle(){
+        return driver.getTitle();
     }
 }
