@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DEMOQA Reports</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 11, 2024 08:37:39 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 11, 2024 10:05:03 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,11 +45,6 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
-</a>
-</li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('device-view')">
@@ -77,8 +72,6 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
-<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -92,25 +85,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="skip" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>8:38:31 PM</span> / <span>00:03:09:309</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>10:05:55 PM</span> / <span>00:00:06:736</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">bookStoreE2E</h5>
-<span class='badge badge-success'>01.11.2024 8:38:31 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:41:40 PM</span>
-<span class='badge badge-default'>00:03:09:309</span>
+<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
+<span class='badge badge-success'>01.11.2024 10:05:55 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:02 PM</span>
+<span class='badge badge-default'>00:00:06:736</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -123,39 +116,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:38:31 PM</td>
+        <td>10:05:55 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>8:41:40 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:06:02 PM</td>
         <td>
-          bookStoreE2Etest skipped
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>8:41:40 PM</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.Error: No se encontró el alerta 
-[Ljava.lang.StackTraceElement;@43fa9a4b
-	at com.example.utils.Actions.confirmAlert(Actions.java:74)
-	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
-	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
+          verifyTextBoxWithInvalidEmail got successfully executed
         </td>
       </tr>
   </tbody>
@@ -168,9 +138,9 @@
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithInvalidEmail</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>8:38:31 PM</span> / <span>00:00:06:364</span>
+              <span>10:05:56 PM</span> / <span>00:00:19:783</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -178,10 +148,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>01.11.2024 8:38:31 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:38:37 PM</span>
-<span class='badge badge-default'>00:00:06:364</span>
+<h5 class="test-status text-pass">bookStoreE2E</h5>
+<span class='badge badge-success'>01.11.2024 10:05:56 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:15 PM</span>
+<span class='badge badge-default'>00:00:19:783</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -194,16 +164,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:38:31 PM</td>
+        <td>10:05:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:38:37 PM</td>
+        <td>10:06:15 PM</td>
         <td>
-          verifyTextBoxWithInvalidEmail got successfully executed
+          bookStoreE2E got successfully executed
         </td>
       </tr>
   </tbody>
@@ -218,7 +188,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>8:39:04 PM</span> / <span>00:00:00:873</span>
+              <span>10:06:08 PM</span> / <span>00:00:01:084</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -227,9 +197,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>01.11.2024 8:39:04 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:39:05 PM</span>
-<span class='badge badge-default'>00:00:00:873</span>
+<span class='badge badge-success'>01.11.2024 10:06:08 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:09 PM</span>
+<span class='badge badge-default'>00:00:01:084</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -242,14 +212,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:39:04 PM</td>
+        <td>10:06:08 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:39:05 PM</td>
+        <td>10:06:09 PM</td>
         <td>
           verifyTextBoxWithInvalidEmail got successfully executed
         </td>
@@ -266,7 +236,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:39:31 PM</span> / <span>00:00:00:827</span>
+              <span>10:06:13 PM</span> / <span>00:00:01:088</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -275,9 +245,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.11.2024 8:39:31 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:39:32 PM</span>
-<span class='badge badge-default'>00:00:00:827</span>
+<span class='badge badge-success'>01.11.2024 10:06:13 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:14 PM</span>
+<span class='badge badge-default'>00:00:01:088</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -290,14 +260,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:39:31 PM</td>
+        <td>10:06:13 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:39:32 PM</td>
+        <td>10:06:14 PM</td>
         <td>
           verifyTextBoxWithValidData got successfully executed
         </td>
@@ -312,9 +282,9 @@
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithValidData</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>8:39:57 PM</span> / <span>00:00:00:902</span>
+              <span>10:06:19 PM</span> / <span>00:00:10:890</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -322,10 +292,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.11.2024 8:39:57 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:39:58 PM</span>
-<span class='badge badge-default'>00:00:00:902</span>
+<h5 class="test-status text-pass">bookStoreE2E</h5>
+<span class='badge badge-success'>01.11.2024 10:06:19 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:30 PM</span>
+<span class='badge badge-default'>00:00:10:890</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -338,16 +308,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:39:57 PM</td>
+        <td>10:06:19 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:39:58 PM</td>
+        <td>10:06:30 PM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          bookStoreE2E got successfully executed
         </td>
       </tr>
   </tbody>
@@ -362,7 +332,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:40:23 PM</span> / <span>00:00:00:982</span>
+              <span>10:06:20 PM</span> / <span>00:00:00:867</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -371,9 +341,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.11.2024 8:40:23 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:40:24 PM</span>
-<span class='badge badge-default'>00:00:00:982</span>
+<span class='badge badge-success'>01.11.2024 10:06:20 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:21 PM</span>
+<span class='badge badge-default'>00:00:00:867</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -386,14 +356,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:40:23 PM</td>
+        <td>10:06:20 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:40:24 PM</td>
+        <td>10:06:21 PM</td>
         <td>
           verifyTextBoxWithValidData got successfully executed
         </td>
@@ -410,7 +380,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:40:50 PM</span> / <span>00:00:01:005</span>
+              <span>10:06:26 PM</span> / <span>00:00:01:073</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -419,9 +389,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.11.2024 8:40:50 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:40:51 PM</span>
-<span class='badge badge-default'>00:00:01:005</span>
+<span class='badge badge-success'>01.11.2024 10:06:26 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:27 PM</span>
+<span class='badge badge-default'>00:00:01:073</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -434,14 +404,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:40:50 PM</td>
+        <td>10:06:26 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:40:51 PM</td>
+        <td>10:06:27 PM</td>
         <td>
           verifyTextBoxWithValidData got successfully executed
         </td>
@@ -451,25 +421,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="8"
+        <li class="test-item"  status="pass" test-id="8"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:42:27 PM</span> / <span>00:06:03:713</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>10:06:31 PM</span> / <span>00:00:00:755</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">bookStoreE2E</h5>
-<span class='badge badge-success'>01.11.2024 8:42:27 PM</span>
-<span class='badge badge-danger'>01.11.2024 8:48:31 PM</span>
-<span class='badge badge-default'>00:06:03:713</span>
+<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>01.11.2024 10:06:31 PM</span>
+<span class='badge badge-danger'>01.11.2024 10:06:32 PM</span>
+<span class='badge badge-default'>00:00:00:755</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -482,98 +452,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:42:27 PM</td>
+        <td>10:06:31 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:45:31 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:06:32 PM</td>
         <td>
-          bookStoreE2Etest fail
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:45:31 PM</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.Error: No se encontró el alerta 
-[Ljava.lang.StackTraceElement;@619cc22
-	at com.example.utils.Actions.confirmAlert(Actions.java:74)
-	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
-	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:48:31 PM</td>
-        <td>
-          bookStoreE2Etest fail
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:48:31 PM</td>
-        <td>
-          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5a0f6a20a9e85339c8daec156ed8fe9d, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49256/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5a0f6a20a9e85339c8daec156ed8fe9d
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
-	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:326)
-	at com.example.base.BaseTest.takesScreenshot(BaseTest.java:57)
-	at com.example.listeners.MyListeners.onTestFailure(MyListeners.java:69)
-	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:108)
-	at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:262)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:751)
-	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: java.util.concurrent.TimeoutException
-	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
-	... 31 more
-</textarea>
-          
+          verifyTextBoxWithValidData got successfully executed
         </td>
       </tr>
   </tbody>
@@ -590,98 +478,7 @@ Caused by: java.util.concurrent.TimeoutException
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">org.openqa.selenium.TimeoutException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.openqa.selenium.TimeoutException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>20:42:27 PM</td>
-<td>
-<a href="#" class="linked" test-id='8' id='8'>bookStoreE2E</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-<span class='badge log badge-skip'>1</span>
-</span>
-<p class="name">java.lang.Error</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>java.lang.Error</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-<span status="skip" class='badge log badge-skip'>1 skipped</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="skip">
-<td><span class="badge log skip-bg">Skip</span></td>
-<td>20:38:31 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>20:42:27 PM</td>
-<td>
-<a href="#" class="linked" test-id='8' id='8'>bookStoreE2E</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="test-wrapper row view device-view attributes-view">
+<div class="test-wrapper row view device-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
@@ -692,9 +489,7 @@ Caused by: java.util.concurrent.TimeoutException
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>6</span>
-<span class='badge log badge-danger'>1</span>
-<span class='badge log badge-skip'>1</span>
+<span class='badge log pass-bg'>8</span>
 </span>
 <p class="name">WindowsServer2022-10.0-amd64-chrome</p>
 <p class="duration text-sm">8 tests</p>
@@ -702,9 +497,7 @@ Caused by: java.util.concurrent.TimeoutException
 <div class="test-contents d-none">
 <div class="info">
 <h4>WindowsServer2022-10.0-amd64-chrome</h4>
-<span status="pass" class='badge log pass-bg'>6 passed</span>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-<span status="skip" class='badge log badge-skip'>1 skipped</span>
+<span status="pass" class='badge log pass-bg'>8 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -715,60 +508,60 @@ Caused by: java.util.concurrent.TimeoutException
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="skip">
-<td><span class="badge log skip-bg">Skip</span></td>
-<td>20:38:31 PM</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:05:55 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='1' id='1'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>20:38:31 PM</td>
+<td>22:05:56 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>verifyTextBoxWithInvalidEmail</a>
+<a href="#" class="linked" test-id='2' id='2'>bookStoreE2E</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>20:39:04 PM</td>
+<td>22:06:08 PM</td>
 <td>
 <a href="#" class="linked" test-id='3' id='3'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>20:39:31 PM</td>
+<td>22:06:13 PM</td>
 <td>
 <a href="#" class="linked" test-id='4' id='4'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>20:39:57 PM</td>
+<td>22:06:19 PM</td>
 <td>
-<a href="#" class="linked" test-id='5' id='5'>verifyTextBoxWithValidData</a>
+<a href="#" class="linked" test-id='5' id='5'>bookStoreE2E</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>20:40:23 PM</td>
+<td>22:06:20 PM</td>
 <td>
 <a href="#" class="linked" test-id='6' id='6'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>20:40:50 PM</td>
+<td>22:06:26 PM</td>
 <td>
 <a href="#" class="linked" test-id='7' id='7'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>20:42:27 PM</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>22:06:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='8' id='8'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='8' id='8'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 </tbody>
@@ -788,25 +581,25 @@ Caused by: java.util.concurrent.TimeoutException
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 11, 2024 08:37:39 PM</h3>
+<h3>Jan 11, 2024 10:05:03 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 11, 2024 08:51:31 PM</h3>
+<h3>Jan 11, 2024 10:06:32 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>6</h3>
+<h3>8</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -822,13 +615,13 @@ Caused by: java.util.concurrent.TimeoutException
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='75%'>
-<b>6</b> tests passed
+<div><small data-tooltip='100%'>
+<b>8</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='12%'><b>1</b> tests failed,
-<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -845,10 +638,10 @@ Caused by: java.util.concurrent.TimeoutException
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='30%'><b>6</b> events passed</small></div>
+<div><small data-tooltip='50%'><b>8</b> events passed</small></div>
 <div>
-<small data-tooltip='20%'><b>4</b> events failed,
-<b data-tooltip='%'>10</b> others
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>8</b> others
 </small>
 </div>
 </div>
@@ -864,7 +657,7 @@ Caused by: java.util.concurrent.TimeoutException
 </div></div>
 <script>
 var timeline = {
-"bookStoreE2E":189.309,"verifyTextBoxWithInvalidEmail":6.364,"verifyTextBoxWithInvalidEmail":0.873,"verifyTextBoxWithValidData":0.827,"verifyTextBoxWithValidData":0.902,"verifyTextBoxWithValidData":0.982,"verifyTextBoxWithValidData":1.005,"bookStoreE2E":363.713
+"verifyTextBoxWithInvalidEmail":6.736,"bookStoreE2E":19.783,"verifyTextBoxWithInvalidEmail":1.084,"verifyTextBoxWithValidData":1.088,"bookStoreE2E":10.89,"verifyTextBoxWithValidData":0.867,"verifyTextBoxWithValidData":1.073,"verifyTextBoxWithValidData":0.755
 };
 </script>
 <div class="row">
@@ -876,11 +669,11 @@ var timeline = {
 <tbody>
 <tr>
 <td>WindowsServer2022-10.0-amd64-chrome</td>
-<td>6</td>
-<td>1</td>
-<td>1</td>
+<td>8</td>
 <td>0</td>
-<td>75%</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 </tbody>
 </table></div>
@@ -913,10 +706,10 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 6,
-failParent: 1,
+passParent: 8,
+failParent: 0,
 warningParent: 0,
-skipParent: 1,
+skipParent: 0,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -930,10 +723,10 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 6,
-failEvents: 4,
+passEvents: 8,
+failEvents: 0,
 warningEvents: 0,
-skipEvents: 2,
+skipEvents: 0,
 infoEvents: 8
 };
 </script>        </div>
