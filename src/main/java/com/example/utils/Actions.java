@@ -2,6 +2,7 @@ package com.example.utils;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -65,11 +66,13 @@ public class Actions {
 
     protected void confirmAlert() {
         try {
-            wait.until(ExpectedConditions.alertIsPresent()); // Esperar a que aparezca una alerta
+            WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(3));
+            ewait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+            alert.accept();
         } catch (TimeoutException e) {
             throw new Error("No se encontró el alerta \n" + e.getStackTrace());
         }
-        driver.switchTo().alert().accept(); // Aceptar la alerta
     }
 
     public void clickLinkText(String linkText) {
