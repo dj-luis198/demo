@@ -47,10 +47,18 @@ public class Actions {
     }
 
     protected void confirmAlert() {
-        wait.until(ExpectedConditions.alertIsPresent()); // Esperar a que aparezca una alerta
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
+        try {
+            wait.until(ExpectedConditions.alertIsPresent()); // Esperar a que aparezca una alerta
+            } catch (TimeoutException e) {
+            throw new Error("No se encontró el alerta \n"+ e.getStackTrace());
+        }
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+            driver.switchTo().defaultContent(); // Devuelve el foco al contenido principal
+        } catch (Exception e) {
+            throw new Error("No se pudo aceptar el alerta \n"+ e.getStackTrace());
+        }
     }
 
     public void clickLinkText(String linkText) {
