@@ -80,7 +80,7 @@ public class Actions {
 
     protected void clickJS(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].click();", waitToBeClickable(element));
+        jse.executeScript("arguments[0].click();", element);
     }
 
     protected void type(WebElement element, String text) {
