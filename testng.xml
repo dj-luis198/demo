@@ -20,7 +20,7 @@
     </test>
     <test name="Test3">
         <classes>
-            <class name="com.example.test.gui.bookStoreApp.LoguinTest" />
+            <class name="com.example.test.gui.bookStoreApp.LoginTest" />
             <!-- Agrega más clases de prueba aquí según sea necesario -->
         </classes>
     </test>
