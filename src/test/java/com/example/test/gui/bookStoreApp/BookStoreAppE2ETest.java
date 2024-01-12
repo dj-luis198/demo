@@ -10,7 +10,7 @@ import com.example.pages.BookStorePage;
 import com.example.pages.HomePage;
 import com.example.pages.LoginPage;
 import com.example.pages.ProfilePage;
-import com.example.resources.dataProviders.bookStoreApplication.LoginDataProvider;
+import com.example.resources.dataProviders.bookStoreApplication.BookStoreAppDataProvider;
 
 public class BookStoreAppE2ETest extends BaseTest {
     private LoginPage loginPage;
@@ -24,7 +24,7 @@ public class BookStoreAppE2ETest extends BaseTest {
         loginPage = homePage.goToLoginPage();
     }
 
-    @Factory(dataProvider = "loginValidData", dataProviderClass = LoginDataProvider.class)
+    @Factory(dataProvider = "bookStoreAppE2EData", dataProviderClass = BookStoreAppDataProvider.class)
     public BookStoreAppE2ETest(String username, String password, String books) {
         this.username = username;
         this.password = password;

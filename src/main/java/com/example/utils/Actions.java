@@ -21,6 +21,16 @@ public class Actions {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+    /*------------------------------ Waits------------------------------- */
+
+    protected void waitTime(int time) {
+        try {
+            WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(time));
+            ewait.until(ExpectedConditions.titleIs("titulo fake"));
+        } catch (Exception e) {
+        }
+    }
+
     protected boolean waitTVisivilityElementBoolean(String Locator) {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Locator)));
@@ -53,7 +63,6 @@ public class Actions {
         } catch (TimeoutException e) {
             throw new Error("El elemento no se volvió visible dentro del tiempo de espera.\n" + e.getStackTrace());
         }
-
     }
 
     protected WebElement waitToBeClickable(WebElement element) {
@@ -64,6 +73,7 @@ public class Actions {
         }
     }
 
+    /*------------------------------ Alerts ------------------------------ */
     protected void confirmAlert() {
         Alert alert;
         try {
@@ -76,6 +86,7 @@ public class Actions {
         }
     }
 
+    /*------------------------------ Clicks------------------------------- */
     public void clickLinkText(String linkText) {
         WebElement element = waitToBeClickableLinkText(linkText);
         click(element);
@@ -98,10 +109,17 @@ public class Actions {
         jse.executeScript("arguments[0].click();", waitToBeClickable(element));
     }
 
+    /*------------------------------ Type ------------------------------ */
     protected void type(WebElement element, String text) {
         waitForVisibility(element).sendKeys(text);
     }
 
+    /*------------------------------ Gets------------------------------- */
+
+    protected String getTitle() {
+        return driver.getTitle();
+    }
+    
     protected String getText(WebElement element) {
         return waitForVisibility(element).getText();
     }
@@ -114,22 +132,12 @@ public class Actions {
         return waitForVisibility(element).getCssValue("border");
     }
 
+    /*------------------------------ Serchs------------------------------- */
     protected boolean serchLocatorId(String locator) {
         return waitTVisivilityElementBoolean(locator);
     }
 
     protected boolean serchNotVisivilityLocatorId(String locator) {
         return waitTNotVisivilityElementBoolean(locator);
-    }
-
-    protected void waitTime(int time) {
-        try {
-        WebDriverWait ewait = new WebDriverWait(driver, Duration.ofSeconds(time));
-        ewait.until(ExpectedConditions.titleIs("titulo fake"));
-        } catch (Exception e) {  
-        }
-    }
-    protected String getTitle(){
-        return driver.getTitle();
     }
 }

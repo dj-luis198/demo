@@ -21,6 +21,9 @@ public class LoginPage extends Actions {
     @FindBy(className = "main-header")
     private WebElement mainHeader;
 
+    @FindBy(id = "name")
+    private WebElement MsgErrorLogin;
+
     public LoginPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -52,5 +55,9 @@ public class LoginPage extends Actions {
         } else {
             return false;
         }
+    }
+
+    public String getMsgErrorLogin() {
+        return getText(MsgErrorLogin);
     }
 }
