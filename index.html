@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DEMOQA Reports</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 12, 2024 06:23:16 AM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 12, 2024 08:22:44 AM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('device-view')">
@@ -72,6 +77,8 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -85,25 +92,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="skip" test-id="1"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithInvalidEmail</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:24:06 AM</span> / <span>00:00:07:764</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:36 AM</span> / <span>00:00:16:762</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>01.12.2024 6:24:06 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:14 AM</span>
-<span class='badge badge-default'>00:00:07:764</span>
+<h5 class="test-status text-skip">bookStoreE2E</h5>
+<span class='badge badge-success'>01.12.2024 8:23:36 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:53 AM</span>
+<span class='badge badge-default'>00:00:16:762</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -116,16 +123,40 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:06 AM</td>
+        <td>8:23:36 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:14 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:53 AM</td>
         <td>
-          verifyTextBoxWithInvalidEmail got successfully executed
+          bookStoreE2Etest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:53 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@5ed88800
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.ProfilePage.getUserName(ProfilePage.java:45)
+	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -138,9 +169,9 @@
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>6:24:06 AM</span> / <span>00:00:19:673</span>
+              <span>8:23:36 AM</span> / <span>00:00:06:572</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -148,10 +179,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">bookStoreE2E</h5>
-<span class='badge badge-success'>01.12.2024 6:24:06 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:26 AM</span>
-<span class='badge badge-default'>00:00:19:673</span>
+<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
+<span class='badge badge-success'>01.12.2024 8:23:36 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:43 AM</span>
+<span class='badge badge-default'>00:00:06:572</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -164,16 +195,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:06 AM</td>
+        <td>8:23:36 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:26 AM</td>
+        <td>8:23:43 AM</td>
         <td>
-          bookStoreE2E got successfully executed
+          verifyTextBoxWithInvalidEmail got successfully executed
         </td>
       </tr>
   </tbody>
@@ -181,25 +212,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="skip" test-id="3"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>6:24:18 AM</span> / <span>00:00:00:938</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:55 AM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>01.12.2024 6:24:18 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:19 AM</span>
-<span class='badge badge-default'>00:00:00:938</span>
+<h5 class="test-status text-skip">verifyTextBoxWithInvalidEmail</h5>
+<span class='badge badge-success'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -212,16 +243,55 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:18 AM</td>
+        <td>8:23:55 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:19 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
         <td>
-          verifyTextBoxWithInvalidEmail got successfully executed
+          verifyTextBoxWithInvalidEmailtest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@273adf3a
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.HomePage.clickCardElements(HomePage.java:32)
+	at com.example.pages.HomePage.goToTextBoxPage(HomePage.java:40)
+	at com.example.test.gui.textBox.TextBoxTest.preconditions(TextBoxTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -229,25 +299,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="4"
+        <li class="test-item"  status="skip" test-id="4"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:24:24 AM</span> / <span>00:00:01:060</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:55 AM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.12.2024 6:24:24 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:25 AM</span>
-<span class='badge badge-default'>00:00:01:060</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -260,16 +330,55 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:24 AM</td>
+        <td>8:23:55 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:25 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@273adf3a
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.HomePage.clickCardElements(HomePage.java:32)
+	at com.example.pages.HomePage.goToTextBoxPage(HomePage.java:40)
+	at com.example.test.gui.textBox.TextBoxTest.preconditions(TextBoxTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -277,25 +386,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="5"
+        <li class="test-item"  status="skip" test-id="5"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:24:29 AM</span> / <span>00:00:01:837</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:55 AM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.12.2024 6:24:29 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:30 AM</span>
-<span class='badge badge-default'>00:00:01:837</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -308,16 +417,55 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:29 AM</td>
+        <td>8:23:55 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:30 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@273adf3a
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.HomePage.clickCardElements(HomePage.java:32)
+	at com.example.pages.HomePage.goToTextBoxPage(HomePage.java:40)
+	at com.example.test.gui.textBox.TextBoxTest.preconditions(TextBoxTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -325,25 +473,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="6"
+        <li class="test-item"  status="skip" test-id="6"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:24:35 AM</span> / <span>00:00:10:377</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:55 AM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">bookStoreE2E</h5>
-<span class='badge badge-success'>01.12.2024 6:24:35 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:46 AM</span>
-<span class='badge badge-default'>00:00:10:377</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -356,16 +504,55 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:35 AM</td>
+        <td>8:23:55 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:46 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
         <td>
-          bookStoreE2E got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@273adf3a
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.HomePage.clickCardElements(HomePage.java:32)
+	at com.example.pages.HomePage.goToTextBoxPage(HomePage.java:40)
+	at com.example.test.gui.textBox.TextBoxTest.preconditions(TextBoxTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -373,25 +560,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="7"
+        <li class="test-item"  status="skip" test-id="7"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:24:36 AM</span> / <span>00:00:00:813</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:55 AM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.12.2024 6:24:36 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:37 AM</span>
-<span class='badge badge-default'>00:00:00:813</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:23:55 AM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -404,16 +591,55 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:36 AM</td>
+        <td>8:23:55 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:37 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:55 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@273adf3a
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.HomePage.clickCardElements(HomePage.java:32)
+	at com.example.pages.HomePage.goToTextBoxPage(HomePage.java:40)
+	at com.example.test.gui.textBox.TextBoxTest.preconditions(TextBoxTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -421,25 +647,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="8"
+        <li class="test-item"  status="skip" test-id="8"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithValidData</p>
+            <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>6:24:42 AM</span> / <span>00:00:00:623</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:59 AM</span> / <span>00:00:10:814</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>01.12.2024 6:24:42 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:43 AM</span>
-<span class='badge badge-default'>00:00:00:623</span>
+<h5 class="test-status text-skip">VerifyLoginWithInvalidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:23:59 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:24:10 AM</span>
+<span class='badge badge-default'>00:00:10:814</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -452,16 +678,50 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:42 AM</td>
+        <td>8:23:59 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:43 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:24:10 AM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          VerifyLoginWithInvalidDataTesttest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:24:10 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@e1cb66c
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.LoginPage.getMsgErrorLogin(LoginPage.java:61)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithInvalidDataTest(LoginTest.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -469,47 +729,95 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="9"
+        <li class="test-item"  status="fail" test-id="9"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithInvalidDataTest</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:24:47 AM</span> / <span>00:00:01:087</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:24:05 AM</span> / <span>00:00:00:478</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
-<span class='badge badge-success'>01.12.2024 6:24:47 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:48 AM</span>
-<span class='badge badge-default'>00:00:01:087</span>
+<h5 class="test-status text-fail">bookStoreE2E</h5>
+<span class='badge badge-success'>01.12.2024 8:24:05 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:24:05 AM</span>
+<span class='badge badge-default'>00:00:00:478</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 <div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='Screenshots/bookStoreE2Echrome1705047845140.png' src="Screenshots/bookStoreE2Echrome1705047845140.png">
+    <div class="title">bookStoreE2E</div>
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:47 AM</td>
+        <td>8:24:05 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:48 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:24:05 AM</td>
         <td>
-          VerifyLoginWithInvalidDataTest got successfully executed
+          bookStoreE2Etest fail
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:24:05 AM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {using=id, value=userName}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59797}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59797/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	at com.example.utils.Actions.waitForVisibility(Actions.java:62)
+	at com.example.utils.Actions.type(Actions.java:114)
+	at com.example.pages.LoginPage.enterUsername(LoginPage.java:33)
+	at com.example.pages.LoginPage.login(LoginPage.java:45)
+	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -517,25 +825,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="10"
+        <li class="test-item"  status="skip" test-id="10"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithInvalidDataTest</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:24:52 AM</span> / <span>00:00:00:977</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:24:05 AM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
-<span class='badge badge-success'>01.12.2024 6:24:52 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:53 AM</span>
-<span class='badge badge-default'>00:00:00:977</span>
+<h5 class="test-status text-skip">bookStoreE2E</h5>
+<span class='badge badge-success'>01.12.2024 8:24:05 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:24:05 AM</span>
+<span class='badge badge-default'>00:00:00:001</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -548,16 +856,55 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:52 AM</td>
+        <td>8:24:05 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:53 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:24:05 AM</td>
         <td>
-          VerifyLoginWithInvalidDataTest got successfully executed
+          bookStoreE2Etest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:24:05 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@6c63e0c4
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.HomePage.clickCardBookStoreApplication(HomePage.java:48)
+	at com.example.pages.HomePage.goToLoginPage(HomePage.java:56)
+	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.preconditions(BookStoreAppE2ETest.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -565,47 +912,85 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="11"
+        <li class="test-item"  status="fail" test-id="11"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>6:24:56 AM</span> / <span>00:00:01:542</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:24:14 AM</span> / <span>00:00:11:341</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
-<span class='badge badge-success'>01.12.2024 6:24:56 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:24:58 AM</span>
-<span class='badge badge-default'>00:00:01:542</span>
+<h5 class="test-status text-fail">VerifyLoginWithInvalidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:24:14 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:24:25 AM</span>
+<span class='badge badge-default'>00:00:11:341</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 <div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='Screenshots/VerifyLoginWithInvalidDataTestchrome1705047865081.png' src="Screenshots/VerifyLoginWithInvalidDataTestchrome1705047865081.png">
+    <div class="title">VerifyLoginWithInvalidDataTest</div>
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:24:56 AM</td>
+        <td>8:24:14 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:24:58 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:24:25 AM</td>
         <td>
-          VerifyLoginWithValidDataTest got successfully executed
+          VerifyLoginWithInvalidDataTesttest fail
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:24:25 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@1be867f2
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.LoginPage.getMsgErrorLogin(LoginPage.java:61)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithInvalidDataTest(LoginTest.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -613,25 +998,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="12"
+        <li class="test-item"  status="skip" test-id="12"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>6:25:02 AM</span> / <span>00:00:01:645</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:24:29 AM</span> / <span>00:00:10:744</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
-<span class='badge badge-success'>01.12.2024 6:25:02 AM</span>
-<span class='badge badge-danger'>01.12.2024 6:25:04 AM</span>
-<span class='badge badge-default'>00:00:01:645</span>
+<h5 class="test-status text-skip">VerifyLoginWithInvalidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:24:29 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:24:39 AM</span>
+<span class='badge badge-default'>00:00:10:744</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -644,16 +1029,472 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:25:02 AM</td>
+        <td>8:24:29 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:25:04 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:24:39 AM</td>
         <td>
-          VerifyLoginWithValidDataTest got successfully executed
+          VerifyLoginWithInvalidDataTesttest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:24:39 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@532bf6ec
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.LoginPage.getMsgErrorLogin(LoginPage.java:61)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithInvalidDataTest(LoginTest.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="13"
+          author=""
+          tag=""
+          device="WindowsServer2022-10.0-amd64-chrome">
+          <div class="test-detail">
+            <p class="name">VerifyLoginWithInvalidDataTest</p>
+            <p class="text-sm">
+              <span>8:24:43 AM</span> / <span>00:00:11:168</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">VerifyLoginWithInvalidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:24:43 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:24:54 AM</span>
+<span class='badge badge-default'>00:00:11:168</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='Screenshots/VerifyLoginWithInvalidDataTestchrome1705047893997.png' src="Screenshots/VerifyLoginWithInvalidDataTestchrome1705047893997.png">
+    <div class="title">VerifyLoginWithInvalidDataTest</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:24:43 AM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:24:53 AM</td>
+        <td>
+          VerifyLoginWithInvalidDataTesttest fail
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:24:53 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@5078db81
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.LoginPage.getMsgErrorLogin(LoginPage.java:61)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithInvalidDataTest(LoginTest.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="14"
+          author=""
+          tag=""
+          device="WindowsServer2022-10.0-amd64-chrome">
+          <div class="test-detail">
+            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="text-sm">
+              <span>8:24:58 AM</span> / <span>00:00:10:764</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">VerifyLoginWithValidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:24:58 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:25:08 AM</span>
+<span class='badge badge-default'>00:00:10:764</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:24:58 AM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:25:08 AM</td>
+        <td>
+          VerifyLoginWithValidDataTesttest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:25:08 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@63e967c1
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.ProfilePage.getUserName(ProfilePage.java:45)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithValidDataTest(LoginTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="15"
+          author=""
+          tag=""
+          device="WindowsServer2022-10.0-amd64-chrome">
+          <div class="test-detail">
+            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="text-sm">
+              <span>8:25:12 AM</span> / <span>00:00:11:182</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">VerifyLoginWithValidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:25:12 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:25:23 AM</span>
+<span class='badge badge-default'>00:00:11:182</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='Screenshots/VerifyLoginWithValidDataTestchrome1705047923085.png' src="Screenshots/VerifyLoginWithValidDataTestchrome1705047923085.png">
+    <div class="title">VerifyLoginWithValidDataTest</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:25:12 AM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:25:23 AM</td>
+        <td>
+          VerifyLoginWithValidDataTesttest fail
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:25:23 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@72eceb40
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.ProfilePage.getUserName(ProfilePage.java:45)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithValidDataTest(LoginTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="16"
+          author=""
+          tag=""
+          device="WindowsServer2022-10.0-amd64-chrome">
+          <div class="test-detail">
+            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="text-sm">
+              <span>8:25:26 AM</span> / <span>00:00:10:915</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">VerifyLoginWithValidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:25:26 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:25:37 AM</span>
+<span class='badge badge-default'>00:00:10:915</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:25:26 AM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:25:37 AM</td>
+        <td>
+          VerifyLoginWithValidDataTesttest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:25:37 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@27cbce88
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.ProfilePage.getUserName(ProfilePage.java:45)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithValidDataTest(LoginTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="17"
+          author=""
+          tag=""
+          device="WindowsServer2022-10.0-amd64-chrome">
+          <div class="test-detail">
+            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="text-sm">
+              <span>8:25:40 AM</span> / <span>00:00:11:114</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">VerifyLoginWithValidDataTest</h5>
+<span class='badge badge-success'>01.12.2024 8:25:40 AM</span>
+<span class='badge badge-danger'>01.12.2024 8:25:51 AM</span>
+<span class='badge badge-default'>00:00:11:114</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='Screenshots/VerifyLoginWithValidDataTestchrome1705047951348.png' src="Screenshots/VerifyLoginWithValidDataTestchrome1705047951348.png">
+    <div class="title">VerifyLoginWithValidDataTest</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:25:40 AM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:25:51 AM</td>
+        <td>
+          VerifyLoginWithValidDataTesttest fail
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:25:51 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió visible dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@6cfbc8fd
+	at com.example.utils.Actions.waitForVisibility(Actions.java:64)
+	at com.example.utils.Actions.getText(Actions.java:124)
+	at com.example.pages.ProfilePage.getUserName(ProfilePage.java:45)
+	at com.example.test.gui.bookStoreApp.LoginTest.VerifyLoginWithValidDataTest(LoginTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -670,26 +1511,26 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view device-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>12</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">WindowsServer2022-10.0-amd64-chrome</p>
-<p class="duration text-sm">12 tests</p>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>WindowsServer2022-10.0-amd64-chrome</h4>
-<span status="pass" class='badge log pass-bg'>12 passed</span>
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -700,88 +1541,309 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:06 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:24:05 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>verifyTextBoxWithInvalidEmail</a>
+<a href="#" class="linked" test-id='9' id='9'>bookStoreE2E</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:06 AM</td>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+<span class='badge log badge-skip'>11</span>
+</span>
+<p class="name">java.lang.Error</p>
+<p class="duration text-sm">15 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.Error</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+<span status="skip" class='badge log badge-skip'>11 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:36 AM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:18 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
 <a href="#" class="linked" test-id='3' id='3'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:24 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
 <a href="#" class="linked" test-id='4' id='4'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:29 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
 <a href="#" class="linked" test-id='5' id='5'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:35 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
-<a href="#" class="linked" test-id='6' id='6'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='6' id='6'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:36 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
 <a href="#" class="linked" test-id='7' id='7'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:42 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:24:05 AM</td>
 <td>
-<a href="#" class="linked" test-id='8' id='8'>verifyTextBoxWithValidData</a>
+<a href="#" class="linked" test-id='10' id='10'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:59 AM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:24:14 AM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:24:29 AM</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:24:43 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:24:58 AM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:25:12 AM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:25:26 AM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:25:40 AM</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view device-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>5</span>
+<span class='badge log badge-skip'>11</span>
+</span>
+<p class="name">WindowsServer2022-10.0-amd64-chrome</p>
+<p class="duration text-sm">17 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WindowsServer2022-10.0-amd64-chrome</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+<span status="skip" class='badge log badge-skip'>11 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:36 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:47 AM</td>
+<td>08:23:36 AM</td>
 <td>
-<a href="#" class="linked" test-id='9' id='9'>VerifyLoginWithInvalidDataTest</a>
+<a href="#" class="linked" test-id='2' id='2'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:52 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
-<a href="#" class="linked" test-id='10' id='10'>VerifyLoginWithInvalidDataTest</a>
+<a href="#" class="linked" test-id='3' id='3'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:24:56 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
-<a href="#" class="linked" test-id='11' id='11'>VerifyLoginWithValidDataTest</a>
+<a href="#" class="linked" test-id='4' id='4'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:25:02 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
 <td>
-<a href="#" class="linked" test-id='12' id='12'>VerifyLoginWithValidDataTest</a>
+<a href="#" class="linked" test-id='5' id='5'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:23:59 AM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:24:05 AM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:24:05 AM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:24:14 AM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:24:29 AM</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:24:43 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>VerifyLoginWithInvalidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:24:58 AM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:25:12 AM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:25:26 AM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>VerifyLoginWithValidDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:25:40 AM</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>VerifyLoginWithValidDataTest</a>
 </td>
 </tr>
 </tbody>
@@ -801,25 +1863,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 12, 2024 06:23:16 AM</h3>
+<h3>Jan 12, 2024 08:22:44 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 12, 2024 06:25:04 AM</h3>
+<h3>Jan 12, 2024 08:25:51 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>12</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>5</h3>
 </div></div>
 </div>
 </div>
@@ -835,13 +1897,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>12</b> tests passed
+<div><small data-tooltip='5%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<small data-tooltip='29%'><b>5</b> tests failed,
+<b>11</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -858,10 +1920,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>12</b> events passed</small></div>
+<div><small data-tooltip='2%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>12</b> others
+<small data-tooltip='20%'><b>10</b> events failed,
+<b data-tooltip='%'>39</b> others
 </small>
 </div>
 </div>
@@ -877,7 +1939,7 @@
 </div></div>
 <script>
 var timeline = {
-"verifyTextBoxWithInvalidEmail":7.764,"bookStoreE2E":19.673,"verifyTextBoxWithInvalidEmail":0.938,"verifyTextBoxWithValidData":1.06,"verifyTextBoxWithValidData":1.837,"bookStoreE2E":10.377,"verifyTextBoxWithValidData":0.813,"verifyTextBoxWithValidData":0.623,"VerifyLoginWithInvalidDataTest":1.087,"VerifyLoginWithInvalidDataTest":0.977,"VerifyLoginWithValidDataTest":1.542,"VerifyLoginWithValidDataTest":1.645
+"bookStoreE2E":16.762,"verifyTextBoxWithInvalidEmail":6.572,"verifyTextBoxWithInvalidEmail":0,"verifyTextBoxWithValidData":0,"verifyTextBoxWithValidData":0,"verifyTextBoxWithValidData":0,"verifyTextBoxWithValidData":0,"VerifyLoginWithInvalidDataTest":10.814,"bookStoreE2E":0.478,"bookStoreE2E":0.001,"VerifyLoginWithInvalidDataTest":11.341,"VerifyLoginWithInvalidDataTest":10.744,"VerifyLoginWithInvalidDataTest":11.168,"VerifyLoginWithValidDataTest":10.764,"VerifyLoginWithValidDataTest":11.182,"VerifyLoginWithValidDataTest":10.915,"VerifyLoginWithValidDataTest":11.114
 };
 </script>
 <div class="row">
@@ -889,11 +1951,11 @@ var timeline = {
 <tbody>
 <tr>
 <td>WindowsServer2022-10.0-amd64-chrome</td>
-<td>12</td>
+<td>1</td>
+<td>5</td>
+<td>11</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>5.882%</td>
 </tr>
 </tbody>
 </table></div>
@@ -926,10 +1988,10 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 12,
-failParent: 0,
+passParent: 1,
+failParent: 5,
 warningParent: 0,
-skipParent: 0,
+skipParent: 11,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -943,11 +2005,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 12,
-failEvents: 0,
+passEvents: 1,
+failEvents: 10,
 warningEvents: 0,
-skipEvents: 0,
-infoEvents: 12
+skipEvents: 22,
+infoEvents: 17
 };
 </script>        </div>
       </div>
