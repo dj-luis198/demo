@@ -18,4 +18,10 @@
             <!-- Agrega más clases de prueba aquí según sea necesario -->
         </classes>
     </test>
+    <test name="Test3">
+        <classes>
+            <class name="com.example.test.gui.bookStoreApp.LoguinTest" />
+            <!-- Agrega más clases de prueba aquí según sea necesario -->
+        </classes>
+    </test>
 </suite>
