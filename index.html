@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DEMOQA Reports</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 8, 2024 08:20:03 AM</span></a>
+<a href="#"><span class="badge badge-primary">Feb 8, 2024 08:17:07 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('device-view')">
@@ -72,6 +77,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -85,25 +91,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="skip" test-id="1"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>8:21:07 AM</span> / <span>00:00:19:727</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:41 PM</span> / <span>00:00:15:182</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">bookStoreE2E</h5>
-<span class='badge badge-success'>02.08.2024 8:21:07 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:26 AM</span>
-<span class='badge badge-default'>00:00:19:727</span>
+<h5 class="test-status text-skip">bookStoreE2E</h5>
+<span class='badge badge-success'>02.08.2024 8:18:41 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:15:182</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -116,16 +122,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:07 AM</td>
+        <td>8:18:41 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:26 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          bookStoreE2E got successfully executed
+          bookStoreE2Etest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -133,25 +192,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="2"
+        <li class="test-item"  status="skip" test-id="2"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>8:21:09 AM</span> / <span>00:00:03:670</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:41 PM</span> / <span>00:00:15:182</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>02.08.2024 8:21:09 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:13 AM</span>
-<span class='badge badge-default'>00:00:03:670</span>
+<h5 class="test-status text-skip">verifyTextBoxWithInvalidEmail</h5>
+<span class='badge badge-success'>02.08.2024 8:18:41 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:15:182</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -164,16 +223,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:09 AM</td>
+        <td>8:18:41 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:13 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          verifyTextBoxWithInvalidEmail got successfully executed
+          verifyTextBoxWithInvalidEmailtest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -181,25 +293,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="skip" test-id="3"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>8:21:19 AM</span> / <span>00:00:01:324</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:56 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>02.08.2024 8:21:19 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:20 AM</span>
-<span class='badge badge-default'>00:00:01:324</span>
+<h5 class="test-status text-skip">verifyTextBoxWithInvalidEmail</h5>
+<span class='badge badge-success'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -212,16 +324,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:19 AM</td>
+        <td>8:18:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:20 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          verifyTextBoxWithInvalidEmail got successfully executed
+          verifyTextBoxWithInvalidEmailtest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -229,25 +394,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="4"
+        <li class="test-item"  status="skip" test-id="4"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithValidData</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>8:21:25 AM</span> / <span>00:00:01:123</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:56 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>02.08.2024 8:21:25 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:26 AM</span>
-<span class='badge badge-default'>00:00:01:123</span>
+<h5 class="test-status text-skip">bookStoreE2E</h5>
+<span class='badge badge-success'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -260,16 +425,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:25 AM</td>
+        <td>8:18:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:26 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          bookStoreE2Etest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -277,25 +495,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="5"
+        <li class="test-item"  status="skip" test-id="5"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:21:32 AM</span> / <span>00:00:01:776</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:56 PM</span> / <span>00:00:00:010</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>02.08.2024 8:21:32 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:34 AM</span>
-<span class='badge badge-default'>00:00:01:776</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:00:010</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -308,16 +526,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:32 AM</td>
+        <td>8:18:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:34 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -325,25 +596,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="6"
+        <li class="test-item"  status="skip" test-id="6"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:21:32 AM</span> / <span>00:00:12:025</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:56 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">bookStoreE2E</h5>
-<span class='badge badge-success'>02.08.2024 8:21:32 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:44 AM</span>
-<span class='badge badge-default'>00:00:12:025</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -356,16 +627,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:32 AM</td>
+        <td>8:18:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:44 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          bookStoreE2E got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -373,25 +697,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="7"
+        <li class="test-item"  status="skip" test-id="7"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:21:39 AM</span> / <span>00:00:01:640</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:56 PM</span> / <span>00:00:00:016</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>02.08.2024 8:21:39 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:41 AM</span>
-<span class='badge badge-default'>00:00:01:640</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:00:016</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -404,16 +728,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:39 AM</td>
+        <td>8:18:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:41 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -421,25 +798,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="8"
+        <li class="test-item"  status="skip" test-id="8"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>8:21:47 AM</span> / <span>00:00:02:187</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:18:56 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>02.08.2024 8:21:47 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:49 AM</span>
-<span class='badge badge-default'>00:00:02:187</span>
+<h5 class="test-status text-skip">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:18:56 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -452,16 +829,69 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:47 AM</td>
+        <td>8:18:56 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:49 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          verifyTextBoxWithValidDatatest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:18:56 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
+Host info: host: 'fv-az1390-874', ip: '10.1.0.20'
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows Server 2022', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--incognito, --remote-allow-origins=*, --headless=new, --window-size=1920,1080, --disable-extensions, --disable-dev-shm-usage, --disable-gpu, --no-sandbox, --start-fullscreen, --no-proxy-server, --ignore-certificate-errors], binary: C:\Program Files\Google\Chr..., extensions: [], prefs: {download.default_directory: D:\a\demo\demo\files\downlo..., download.prompt_for_download: false}}, pageLoadStrategy: normal}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+	at com.example.utils.WebDriverFactory.getDriver(WebDriverFactory.java:43)
+	at com.example.base.BaseTest.setUp(BaseTest.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -476,7 +906,7 @@
           <div class="test-detail">
             <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>8:21:50 AM</span> / <span>00:00:01:073</span>
+              <span>8:19:12 PM</span> / <span>00:00:02:407</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -485,9 +915,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
-<span class='badge badge-success'>02.08.2024 8:21:50 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:51 AM</span>
-<span class='badge badge-default'>00:00:01:073</span>
+<span class='badge badge-success'>02.08.2024 8:19:12 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:19:15 PM</span>
+<span class='badge badge-default'>00:00:02:407</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -500,14 +930,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:50 AM</td>
+        <td>8:19:12 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:51 AM</td>
+        <td>8:19:15 PM</td>
         <td>
           VerifyLoginWithInvalidDataTest got successfully executed
         </td>
@@ -524,7 +954,7 @@
           <div class="test-detail">
             <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>8:21:55 AM</span> / <span>00:00:01:604</span>
+              <span>8:19:19 PM</span> / <span>00:00:01:632</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -533,9 +963,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
-<span class='badge badge-success'>02.08.2024 8:21:55 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:21:57 AM</span>
-<span class='badge badge-default'>00:00:01:604</span>
+<span class='badge badge-success'>02.08.2024 8:19:19 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:19:21 PM</span>
+<span class='badge badge-default'>00:00:01:632</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -548,14 +978,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:55 AM</td>
+        <td>8:19:19 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:57 AM</td>
+        <td>8:19:21 PM</td>
         <td>
           VerifyLoginWithInvalidDataTest got successfully executed
         </td>
@@ -572,7 +1002,7 @@
           <div class="test-detail">
             <p class="name">VerifyLoginWithValidDataTest</p>
             <p class="text-sm">
-              <span>8:22:01 AM</span> / <span>00:00:02:019</span>
+              <span>8:19:25 PM</span> / <span>00:00:01:864</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -581,9 +1011,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
-<span class='badge badge-success'>02.08.2024 8:22:01 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:22:03 AM</span>
-<span class='badge badge-default'>00:00:02:019</span>
+<span class='badge badge-success'>02.08.2024 8:19:25 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:19:26 PM</span>
+<span class='badge badge-default'>00:00:01:864</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -596,14 +1026,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:22:01 AM</td>
+        <td>8:19:25 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:22:03 AM</td>
+        <td>8:19:26 PM</td>
         <td>
           VerifyLoginWithValidDataTest got successfully executed
         </td>
@@ -620,7 +1050,7 @@
           <div class="test-detail">
             <p class="name">VerifyLoginWithValidDataTest</p>
             <p class="text-sm">
-              <span>8:22:09 AM</span> / <span>00:00:01:664</span>
+              <span>8:19:31 PM</span> / <span>00:00:01:515</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -629,9 +1059,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
-<span class='badge badge-success'>02.08.2024 8:22:09 AM</span>
-<span class='badge badge-danger'>02.08.2024 8:22:10 AM</span>
-<span class='badge badge-default'>00:00:01:664</span>
+<span class='badge badge-success'>02.08.2024 8:19:31 PM</span>
+<span class='badge badge-danger'>02.08.2024 8:19:32 PM</span>
+<span class='badge badge-default'>00:00:01:515</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -644,14 +1074,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:22:09 AM</td>
+        <td>8:19:31 PM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:22:10 AM</td>
+        <td>8:19:32 PM</td>
         <td>
           VerifyLoginWithValidDataTest got successfully executed
         </td>
@@ -670,10 +1100,10 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view device-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
 <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
@@ -681,15 +1111,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>12</span>
+<span class='badge log badge-skip'>8</span>
 </span>
-<p class="name">WindowsServer2022-10.0-amd64-chrome</p>
-<p class="duration text-sm">12 tests</p>
+<p class="name">org.openqa.selenium.SessionNotCreatedException</p>
+<p class="duration text-sm">8 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>WindowsServer2022-10.0-amd64-chrome</h4>
-<span status="pass" class='badge log pass-bg'>12 passed</span>
+<h4>org.openqa.selenium.SessionNotCreatedException</h4>
+<span status="skip" class='badge log badge-skip'>8 skipped</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -700,86 +1130,186 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:07 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:41 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:09 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:41 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='2'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:19 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
 <td>
 <a href="#" class="linked" test-id='3' id='3'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:25 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>verifyTextBoxWithValidData</a>
+<a href="#" class="linked" test-id='4' id='4'>bookStoreE2E</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:32 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
 <td>
 <a href="#" class="linked" test-id='5' id='5'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:32 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
 <td>
-<a href="#" class="linked" test-id='6' id='6'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='6' id='6'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:39 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
 <td>
 <a href="#" class="linked" test-id='7' id='7'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:47 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view device-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Device</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-skip'>8</span>
+</span>
+<p class="name">WindowsServer2022-10.0-amd64-chrome</p>
+<p class="duration text-sm">12 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WindowsServer2022-10.0-amd64-chrome</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="skip" class='badge log badge-skip'>8 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyTextBoxWithInvalidEmail</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyTextBoxWithInvalidEmail</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>20:18:56 PM</td>
 <td>
 <a href="#" class="linked" test-id='8' id='8'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:50 AM</td>
+<td>20:19:12 PM</td>
 <td>
 <a href="#" class="linked" test-id='9' id='9'>VerifyLoginWithInvalidDataTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>08:21:55 AM</td>
+<td>20:19:19 PM</td>
 <td>
 <a href="#" class="linked" test-id='10' id='10'>VerifyLoginWithInvalidDataTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>08:22:01 AM</td>
+<td>20:19:25 PM</td>
 <td>
 <a href="#" class="linked" test-id='11' id='11'>VerifyLoginWithValidDataTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>08:22:09 AM</td>
+<td>20:19:31 PM</td>
 <td>
 <a href="#" class="linked" test-id='12' id='12'>VerifyLoginWithValidDataTest</a>
 </td>
@@ -801,19 +1331,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 8, 2024 08:20:03 AM</h3>
+<h3>Feb 8, 2024 08:17:07 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 8, 2024 08:22:10 AM</h3>
+<h3>Feb 8, 2024 08:19:32 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>12</h3>
+<h3>4</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -835,13 +1365,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>12</b> tests passed
+<div><small data-tooltip='33%'>
+<b>4</b> tests passed
 </small>
 </div>
 <div>
 <small data-tooltip='0%'><b>0</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<b>8</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -858,10 +1388,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>12</b> events passed</small></div>
+<div><small data-tooltip='12%'><b>4</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>12</b> others
+<b data-tooltip='%'>28</b> others
 </small>
 </div>
 </div>
@@ -877,7 +1407,7 @@
 </div></div>
 <script>
 var timeline = {
-"bookStoreE2E":19.727,"verifyTextBoxWithInvalidEmail":3.67,"verifyTextBoxWithInvalidEmail":1.324,"verifyTextBoxWithValidData":1.123,"verifyTextBoxWithValidData":1.776,"bookStoreE2E":12.025,"verifyTextBoxWithValidData":1.64,"verifyTextBoxWithValidData":2.187,"VerifyLoginWithInvalidDataTest":1.073,"VerifyLoginWithInvalidDataTest":1.604,"VerifyLoginWithValidDataTest":2.019,"VerifyLoginWithValidDataTest":1.664
+"bookStoreE2E":15.182,"verifyTextBoxWithInvalidEmail":15.182,"verifyTextBoxWithInvalidEmail":0,"bookStoreE2E":0,"verifyTextBoxWithValidData":0.01,"verifyTextBoxWithValidData":0,"verifyTextBoxWithValidData":0.016,"verifyTextBoxWithValidData":0,"VerifyLoginWithInvalidDataTest":2.407,"VerifyLoginWithInvalidDataTest":1.632,"VerifyLoginWithValidDataTest":1.864,"VerifyLoginWithValidDataTest":1.515
 };
 </script>
 <div class="row">
@@ -889,11 +1419,11 @@ var timeline = {
 <tbody>
 <tr>
 <td>WindowsServer2022-10.0-amd64-chrome</td>
-<td>12</td>
+<td>4</td>
 <td>0</td>
+<td>8</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>33.333%</td>
 </tr>
 </tbody>
 </table></div>
@@ -926,10 +1456,10 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 12,
+passParent: 4,
 failParent: 0,
 warningParent: 0,
-skipParent: 0,
+skipParent: 8,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -943,10 +1473,10 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 12,
+passEvents: 4,
 failEvents: 0,
 warningEvents: 0,
-skipEvents: 0,
+skipEvents: 16,
 infoEvents: 12
 };
 </script>        </div>
