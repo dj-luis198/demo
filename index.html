@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DEMOQA Reports</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 10, 2024 06:19:57 AM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 10, 2024 08:20:37 AM</span></a>
 </li>
 </ul>
 </div>
@@ -92,25 +92,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="skip" test-id="1"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithInvalidEmail</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:20:28 AM</span> / <span>00:00:06:927</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:21:17 AM</span> / <span>00:00:44:982</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>03.10.2024 6:20:28 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:20:35 AM</span>
-<span class='badge badge-default'>00:00:06:927</span>
+<h5 class="test-status text-skip">bookStoreE2E</h5>
+<span class='badge badge-success'>03.10.2024 8:21:17 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:02 AM</span>
+<span class='badge badge-default'>00:00:44:982</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -123,76 +123,43 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:20:28 AM</td>
-        <td>
-          
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:20:35 AM</td>
-        <td>
-          verifyTextBoxWithInvalidEmail got successfully executed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="skip" test-id="2"
-          author=""
-          tag=""
-          device="WindowsServer2022-10.0-amd64-chrome">
-          <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
-            <p class="text-sm">
-              <span>6:20:28 AM</span> / <span>00:00:21:127</span>
-              <span class="badge skip-bg log float-right">Skip</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-skip">bookStoreE2E</h5>
-<span class='badge badge-success'>03.10.2024 6:20:28 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:20:49 AM</span>
-<span class='badge badge-default'>00:00:21:127</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>6:20:28 AM</td>
+        <td>8:21:17 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log skip-bg">Skip</span></td>
-        <td>6:20:49 AM</td>
+        <td>8:22:02 AM</td>
         <td>
           bookStoreE2Etest skipped
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log skip-bg">Skip</span></td>
-        <td>6:20:49 AM</td>
+        <td>8:22:02 AM</td>
         <td>
-          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
-[Ljava.lang.StackTraceElement;@a8288a3
-	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+          <textarea readonly class="code-block">org.testng.internal.thread.ThreadTimeoutException: Method com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E() didn't finish within the time-out 40000
+	at java.base/jdk.internal.misc.Unsafe.park(Native Method)
+	at java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+	at java.base/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1866)
+	at java.base/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3780)
+	at java.base/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3725)
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1939)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
 	at com.example.utils.Actions.click(Actions.java:97)
-	at com.example.pages.BookStorePage.clickAddToYouCollection(BookStorePage.java:42)
-	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
+	at com.example.utils.Actions.clickLinkText(Actions.java:92)
+	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:33)
 	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -206,6 +173,54 @@
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 </textarea>
           
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="WindowsServer2022-10.0-amd64-chrome">
+          <div class="test-detail">
+            <p class="name">verifyTextBoxWithInvalidEmail</p>
+            <p class="text-sm">
+              <span>8:21:22 AM</span> / <span>00:00:01:337</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
+<span class='badge badge-success'>03.10.2024 8:21:22 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:21:23 AM</span>
+<span class='badge badge-default'>00:00:01:337</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:21:22 AM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:21:23 AM</td>
+        <td>
+          verifyTextBoxWithInvalidEmail got successfully executed
         </td>
       </tr>
   </tbody>
@@ -220,7 +235,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithInvalidEmail</p>
             <p class="text-sm">
-              <span>6:20:40 AM</span> / <span>00:00:00:812</span>
+              <span>8:21:29 AM</span> / <span>00:00:01:399</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -229,9 +244,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithInvalidEmail</h5>
-<span class='badge badge-success'>03.10.2024 6:20:40 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:20:41 AM</span>
-<span class='badge badge-default'>00:00:00:812</span>
+<span class='badge badge-success'>03.10.2024 8:21:29 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:21:31 AM</span>
+<span class='badge badge-default'>00:00:01:399</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -244,14 +259,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:20:40 AM</td>
+        <td>8:21:29 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:20:41 AM</td>
+        <td>8:21:31 AM</td>
         <td>
           verifyTextBoxWithInvalidEmail got successfully executed
         </td>
@@ -261,76 +276,47 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="4"
+        <li class="test-item"  status="pass" test-id="4"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:20:53 AM</span> / <span>00:00:14:961</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>8:21:35 AM</span> / <span>00:00:01:139</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">bookStoreE2E</h5>
-<span class='badge badge-success'>03.10.2024 6:20:53 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:08 AM</span>
-<span class='badge badge-default'>00:00:14:961</span>
+<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>03.10.2024 8:21:35 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:21:36 AM</span>
+<span class='badge badge-default'>00:00:01:139</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 <div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
 </div>
-</div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='Screenshots/bookStoreE2Echrome1710051668271.png' src="Screenshots/bookStoreE2Echrome1710051668271.png">
-    <div class="title">bookStoreE2E</div>
-    </div></div>
-<div class="detail-body mt-4">
+</div><div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:20:53 AM</td>
+        <td>8:21:35 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>6:21:08 AM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:21:36 AM</td>
         <td>
-          bookStoreE2Etest fail
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>6:21:08 AM</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
-[Ljava.lang.StackTraceElement;@b2ed93a
-	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
-	at com.example.utils.Actions.click(Actions.java:97)
-	at com.example.pages.BookStorePage.clickAddToYouCollection(BookStorePage.java:42)
-	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
-	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
+          verifyTextBoxWithValidData got successfully executed
         </td>
       </tr>
   </tbody>
@@ -338,25 +324,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="skip" test-id="5"
+        <li class="test-item"  status="pass" test-id="5"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">bookStoreE2E</p>
+            <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:21:12 AM</span> / <span>00:00:16:317</span>
-              <span class="badge skip-bg log float-right">Skip</span>
+              <span>8:21:40 AM</span> / <span>00:00:00:895</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-skip">bookStoreE2E</h5>
-<span class='badge badge-success'>03.10.2024 6:21:12 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:29 AM</span>
-<span class='badge badge-default'>00:00:16:317</span>
+<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
+<span class='badge badge-success'>03.10.2024 8:21:40 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:21:41 AM</span>
+<span class='badge badge-default'>00:00:00:895</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -369,41 +355,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:12 AM</td>
+        <td>8:21:40 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>6:21:29 AM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:21:41 AM</td>
         <td>
-          bookStoreE2Etest skipped
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log skip-bg">Skip</span></td>
-        <td>6:21:29 AM</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
-[Ljava.lang.StackTraceElement;@b501e93
-	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
-	at com.example.utils.Actions.click(Actions.java:97)
-	at com.example.pages.BookStorePage.clickAddToYouCollection(BookStorePage.java:42)
-	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
-	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
-	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</textarea>
-          
+          verifyTextBoxWithValidData got successfully executed
         </td>
       </tr>
   </tbody>
@@ -418,7 +379,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:21:14 AM</span> / <span>00:00:01:446</span>
+              <span>8:21:45 AM</span> / <span>00:00:00:864</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -427,9 +388,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>03.10.2024 6:21:14 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:16 AM</span>
-<span class='badge badge-default'>00:00:01:446</span>
+<span class='badge badge-success'>03.10.2024 8:21:45 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:21:46 AM</span>
+<span class='badge badge-default'>00:00:00:864</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -442,14 +403,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:14 AM</td>
+        <td>8:21:45 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:21:16 AM</td>
+        <td>8:21:46 AM</td>
         <td>
           verifyTextBoxWithValidData got successfully executed
         </td>
@@ -466,7 +427,7 @@
           <div class="test-detail">
             <p class="name">verifyTextBoxWithValidData</p>
             <p class="text-sm">
-              <span>6:21:20 AM</span> / <span>00:00:00:739</span>
+              <span>8:22:19 AM</span> / <span>00:00:01:145</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -475,9 +436,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>03.10.2024 6:21:20 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:21 AM</span>
-<span class='badge badge-default'>00:00:00:739</span>
+<span class='badge badge-success'>03.10.2024 8:22:19 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:20 AM</span>
+<span class='badge badge-default'>00:00:01:145</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -490,14 +451,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:20 AM</td>
+        <td>8:22:19 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:21:21 AM</td>
+        <td>8:22:20 AM</td>
         <td>
           verifyTextBoxWithValidData got successfully executed
         </td>
@@ -512,9 +473,9 @@
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithValidData</p>
+            <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>6:21:25 AM</span> / <span>00:00:00:998</span>
+              <span>8:22:25 AM</span> / <span>00:00:02:052</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -522,10 +483,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>03.10.2024 6:21:25 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:26 AM</span>
-<span class='badge badge-default'>00:00:00:998</span>
+<h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
+<span class='badge badge-success'>03.10.2024 8:22:25 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:27 AM</span>
+<span class='badge badge-default'>00:00:02:052</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -538,16 +499,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:25 AM</td>
+        <td>8:22:25 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:21:26 AM</td>
+        <td>8:22:27 AM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          VerifyLoginWithInvalidDataTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -562,7 +523,7 @@
           <div class="test-detail">
             <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:21:33 AM</span> / <span>00:00:14:105</span>
+              <span>8:22:30 AM</span> / <span>00:00:16:430</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -571,9 +532,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">bookStoreE2E</h5>
-<span class='badge badge-success'>03.10.2024 6:21:33 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:47 AM</span>
-<span class='badge badge-default'>00:00:14:105</span>
+<span class='badge badge-success'>03.10.2024 8:22:30 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:47 AM</span>
+<span class='badge badge-default'>00:00:16:430</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -581,7 +542,7 @@
 <div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='Screenshots/bookStoreE2Echrome1710051707099.png' src="Screenshots/bookStoreE2Echrome1710051707099.png">
+<img data-featherlight='Screenshots/bookStoreE2Echrome1710058966436.png' src="Screenshots/bookStoreE2Echrome1710058966436.png">
     <div class="title">bookStoreE2E</div>
     </div></div>
 <div class="detail-body mt-4">
@@ -590,24 +551,24 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:33 AM</td>
+        <td>8:22:30 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>6:21:47 AM</td>
+        <td>8:22:46 AM</td>
         <td>
           bookStoreE2Etest fail
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>6:21:47 AM</td>
+        <td>8:22:46 AM</td>
         <td>
           <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
-[Ljava.lang.StackTraceElement;@c7e2640
+[Ljava.lang.StackTraceElement;@6de58036
 	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
 	at com.example.utils.Actions.click(Actions.java:97)
 	at com.example.pages.BookStorePage.clickAddToYouCollection(BookStorePage.java:42)
@@ -639,7 +600,7 @@
           <div class="test-detail">
             <p class="name">VerifyLoginWithInvalidDataTest</p>
             <p class="text-sm">
-              <span>6:21:51 AM</span> / <span>00:00:02:194</span>
+              <span>8:22:32 AM</span> / <span>00:00:01:557</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -648,9 +609,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
-<span class='badge badge-success'>03.10.2024 6:21:51 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:21:54 AM</span>
-<span class='badge badge-default'>00:00:02:194</span>
+<span class='badge badge-success'>03.10.2024 8:22:32 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:34 AM</span>
+<span class='badge badge-default'>00:00:01:557</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -663,14 +624,14 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:51 AM</td>
+        <td>8:22:32 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:21:54 AM</td>
+        <td>8:22:34 AM</td>
         <td>
           VerifyLoginWithInvalidDataTest got successfully executed
         </td>
@@ -685,9 +646,9 @@
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithInvalidDataTest</p>
+            <p class="name">VerifyLoginWithValidDataTest</p>
             <p class="text-sm">
-              <span>6:21:58 AM</span> / <span>00:00:02:319</span>
+              <span>8:22:39 AM</span> / <span>00:00:02:106</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -695,10 +656,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithInvalidDataTest</h5>
-<span class='badge badge-success'>03.10.2024 6:21:58 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:22:00 AM</span>
-<span class='badge badge-default'>00:00:02:319</span>
+<h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
+<span class='badge badge-success'>03.10.2024 8:22:39 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:41 AM</span>
+<span class='badge badge-default'>00:00:02:106</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -711,16 +672,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:21:58 AM</td>
+        <td>8:22:39 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:22:00 AM</td>
+        <td>8:22:41 AM</td>
         <td>
-          VerifyLoginWithInvalidDataTest got successfully executed
+          VerifyLoginWithValidDataTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -733,9 +694,9 @@
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">verifyTextBoxWithValidData</p>
+            <p class="name">VerifyLoginWithValidDataTest</p>
             <p class="text-sm">
-              <span>6:22:00 AM</span> / <span>00:00:00:800</span>
+              <span>8:22:45 AM</span> / <span>00:00:02:219</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -743,10 +704,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyTextBoxWithValidData</h5>
-<span class='badge badge-success'>03.10.2024 6:22:00 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:22:01 AM</span>
-<span class='badge badge-default'>00:00:00:800</span>
+<h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
+<span class='badge badge-success'>03.10.2024 8:22:45 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:22:47 AM</span>
+<span class='badge badge-default'>00:00:02:219</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -759,16 +720,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:22:00 AM</td>
+        <td>8:22:45 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:22:01 AM</td>
+        <td>8:22:47 AM</td>
         <td>
-          verifyTextBoxWithValidData got successfully executed
+          VerifyLoginWithValidDataTest got successfully executed
         </td>
       </tr>
   </tbody>
@@ -776,25 +737,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="13"
+        <li class="test-item"  status="skip" test-id="13"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:22:05 AM</span> / <span>00:00:01:739</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:22:51 AM</span> / <span>00:00:14:487</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
-<span class='badge badge-success'>03.10.2024 6:22:05 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:22:07 AM</span>
-<span class='badge badge-default'>00:00:01:739</span>
+<h5 class="test-status text-skip">bookStoreE2E</h5>
+<span class='badge badge-success'>03.10.2024 8:22:51 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:23:06 AM</span>
+<span class='badge badge-default'>00:00:14:487</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -807,16 +768,41 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:22:05 AM</td>
+        <td>8:22:51 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:22:07 AM</td>
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:06 AM</td>
         <td>
-          VerifyLoginWithValidDataTest got successfully executed
+          bookStoreE2Etest skipped
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>8:23:06 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@4908d7a
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.BookStorePage.clickAddToYouCollection(BookStorePage.java:42)
+	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
+	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -824,47 +810,76 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="14"
+        <li class="test-item"  status="fail" test-id="14"
           author=""
           tag=""
           device="WindowsServer2022-10.0-amd64-chrome">
           <div class="test-detail">
-            <p class="name">VerifyLoginWithValidDataTest</p>
+            <p class="name">bookStoreE2E</p>
             <p class="text-sm">
-              <span>6:22:11 AM</span> / <span>00:00:01:831</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:23:10 AM</span> / <span>00:00:14:827</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">VerifyLoginWithValidDataTest</h5>
-<span class='badge badge-success'>03.10.2024 6:22:11 AM</span>
-<span class='badge badge-danger'>03.10.2024 6:22:13 AM</span>
-<span class='badge badge-default'>00:00:01:831</span>
+<h5 class="test-status text-fail">bookStoreE2E</h5>
+<span class='badge badge-success'>03.10.2024 8:23:10 AM</span>
+<span class='badge badge-danger'>03.10.2024 8:23:25 AM</span>
+<span class='badge badge-default'>00:00:14:827</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 <div class="m-t-15"><span class="badge badge-pill badge-default">WindowsServer2022-10.0-amd64-chrome</span></div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='Screenshots/bookStoreE2Echrome1710059004682.png' src="Screenshots/bookStoreE2Echrome1710059004682.png">
+    <div class="title">bookStoreE2E</div>
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:22:11 AM</td>
+        <td>8:23:10 AM</td>
         <td>
           
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:22:13 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:23:24 AM</td>
         <td>
-          VerifyLoginWithValidDataTest got successfully executed
+          bookStoreE2Etest fail
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:23:24 AM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.Error: El elemento no se volvió clickable dentro del tiempo de espera.
+[Ljava.lang.StackTraceElement;@2e1b6c41
+	at com.example.utils.Actions.waitToBeClickable(Actions.java:72)
+	at com.example.utils.Actions.click(Actions.java:97)
+	at com.example.pages.BookStorePage.clickAddToYouCollection(BookStorePage.java:42)
+	at com.example.pages.BookStorePage.selectBooks(BookStorePage.java:35)
+	at com.example.test.gui.bookStoreApp.BookStoreAppE2ETest.bookStoreE2E(BookStoreAppE2ETest.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:47)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:76)
+	at org.testng.internal.invokers.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -885,7 +900,7 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -893,16 +908,63 @@
 <div class="test-detail">
 <span class="meta">
 <span class='badge log badge-danger'>2</span>
-<span class='badge log badge-skip'>2</span>
+<span class='badge log badge-skip'>1</span>
 </span>
 <p class="name">java.lang.Error</p>
-<p class="duration text-sm">4 tests</p>
+<p class="duration text-sm">3 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>java.lang.Error</h4>
 <span status="fail" class='badge log badge-danger'>2 failed</span>
-<span status="skip" class='badge log badge-skip'>2 skipped</span>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:22:30 AM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:22:51 AM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>bookStoreE2E</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:10 AM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>bookStoreE2E</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">org.testng.internal.thread.ThreadTimeoutException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.testng.internal.thread.ThreadTimeoutException</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -915,30 +977,9 @@
 <tbody>
 <tr class="tag-test-status" status="skip">
 <td><span class="badge log skip-bg">Skip</span></td>
-<td>06:20:28 AM</td>
+<td>08:21:17 AM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>bookStoreE2E</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>06:20:53 AM</td>
-<td>
-<a href="#" class="linked" test-id='4' id='4'>bookStoreE2E</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="skip">
-<td><span class="badge log skip-bg">Skip</span></td>
-<td>06:21:12 AM</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>bookStoreE2E</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>06:21:33 AM</td>
-<td>
-<a href="#" class="linked" test-id='9' id='9'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
 </td>
 </tr>
 </tbody>
@@ -987,102 +1028,102 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:20:28 AM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='1'>verifyTextBoxWithInvalidEmail</a>
-</td>
-</tr>
 <tr class="tag-test-status" status="skip">
 <td><span class="badge log skip-bg">Skip</span></td>
-<td>06:20:28 AM</td>
+<td>08:21:17 AM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='1' id='1'>bookStoreE2E</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:20:40 AM</td>
+<td>08:21:22 AM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyTextBoxWithInvalidEmail</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>08:21:29 AM</td>
 <td>
 <a href="#" class="linked" test-id='3' id='3'>verifyTextBoxWithInvalidEmail</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>06:20:53 AM</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>08:21:35 AM</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>bookStoreE2E</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="skip">
-<td><span class="badge log skip-bg">Skip</span></td>
-<td>06:21:12 AM</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>bookStoreE2E</a>
+<a href="#" class="linked" test-id='4' id='4'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:21:14 AM</td>
+<td>08:21:40 AM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyTextBoxWithValidData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>08:21:45 AM</td>
 <td>
 <a href="#" class="linked" test-id='6' id='6'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:21:20 AM</td>
+<td>08:22:19 AM</td>
 <td>
 <a href="#" class="linked" test-id='7' id='7'>verifyTextBoxWithValidData</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:21:25 AM</td>
+<td>08:22:25 AM</td>
 <td>
-<a href="#" class="linked" test-id='8' id='8'>verifyTextBoxWithValidData</a>
+<a href="#" class="linked" test-id='8' id='8'>VerifyLoginWithInvalidDataTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>06:21:33 AM</td>
+<td>08:22:30 AM</td>
 <td>
 <a href="#" class="linked" test-id='9' id='9'>bookStoreE2E</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:21:51 AM</td>
+<td>08:22:32 AM</td>
 <td>
 <a href="#" class="linked" test-id='10' id='10'>VerifyLoginWithInvalidDataTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:21:58 AM</td>
+<td>08:22:39 AM</td>
 <td>
-<a href="#" class="linked" test-id='11' id='11'>VerifyLoginWithInvalidDataTest</a>
+<a href="#" class="linked" test-id='11' id='11'>VerifyLoginWithValidDataTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>06:22:00 AM</td>
+<td>08:22:45 AM</td>
 <td>
-<a href="#" class="linked" test-id='12' id='12'>verifyTextBoxWithValidData</a>
+<a href="#" class="linked" test-id='12' id='12'>VerifyLoginWithValidDataTest</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:22:05 AM</td>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>08:22:51 AM</td>
 <td>
-<a href="#" class="linked" test-id='13' id='13'>VerifyLoginWithValidDataTest</a>
+<a href="#" class="linked" test-id='13' id='13'>bookStoreE2E</a>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>06:22:11 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>08:23:10 AM</td>
 <td>
-<a href="#" class="linked" test-id='14' id='14'>VerifyLoginWithValidDataTest</a>
+<a href="#" class="linked" test-id='14' id='14'>bookStoreE2E</a>
 </td>
 </tr>
 </tbody>
@@ -1102,13 +1143,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 10, 2024 06:19:57 AM</h3>
+<h3>Mar 10, 2024 08:20:37 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 10, 2024 06:22:13 AM</h3>
+<h3>Mar 10, 2024 08:23:25 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -1178,7 +1219,7 @@
 </div></div>
 <script>
 var timeline = {
-"verifyTextBoxWithInvalidEmail":6.927,"bookStoreE2E":21.127,"verifyTextBoxWithInvalidEmail":0.812,"bookStoreE2E":14.961,"bookStoreE2E":16.317,"verifyTextBoxWithValidData":1.446,"verifyTextBoxWithValidData":0.739,"verifyTextBoxWithValidData":0.998,"bookStoreE2E":14.105,"VerifyLoginWithInvalidDataTest":2.194,"VerifyLoginWithInvalidDataTest":2.319,"verifyTextBoxWithValidData":0.8,"VerifyLoginWithValidDataTest":1.739,"VerifyLoginWithValidDataTest":1.831
+"bookStoreE2E":44.982,"verifyTextBoxWithInvalidEmail":1.337,"verifyTextBoxWithInvalidEmail":1.399,"verifyTextBoxWithValidData":1.139,"verifyTextBoxWithValidData":0.895,"verifyTextBoxWithValidData":0.864,"verifyTextBoxWithValidData":1.145,"VerifyLoginWithInvalidDataTest":2.052,"bookStoreE2E":16.43,"VerifyLoginWithInvalidDataTest":1.557,"VerifyLoginWithValidDataTest":2.106,"VerifyLoginWithValidDataTest":2.219,"bookStoreE2E":14.487,"bookStoreE2E":14.827
 };
 </script>
 <div class="row">
